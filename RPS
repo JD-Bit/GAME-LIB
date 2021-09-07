@@ -1,0 +1,30 @@
+# GAME-LIB
+
+import random
+
+possible_actions = ["rock", "paper", "scissors"]
+computer_action = random.choice(possible_actions)
+
+user_action = input("rock, paper, scissors, shoot: ")
+
+print("The compuer chooses " + computer_action + "!")
+
+if computer_action == user_action:
+    print("Its a tie!")
+elif computer_action == "rock":
+    if user_action == "paper":
+        print("paper covers rock, you win!")
+    else :
+        print("rock smashes scissors. you lose.")
+elif computer_action == "paper":
+    if user_action == "rock":
+        print("paper covers rock, you lose.")
+    else :
+        print("scissors cut paper, you win!")
+elif computer_action == "scissors":
+    if user_action == "paper":
+        print("scissors cut paper, you lose.")
+    else :
+        print("rock smashes scissors. you win!")
+
+print("\nClick 'Run' to play again :)")
