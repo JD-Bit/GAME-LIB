@@ -1,0 +1,54 @@
+#Improved RPS
+#multiple games and sessions
+
+import random
+
+print("Welcome to Rock, Paper, Scissors shoot")
+
+user_wins = 0
+total_no_games = 0
+
+possible_moves = ["scissors", "paper", "rock"]
+
+
+
+while True:
+    computer_move = random.choice(possible_moves)
+    user_input = input("\nType Rock/Paper/Scissors to start or Q to quit").lower()
+    if user_input == "q":
+        break
+    if user_input not in possible_moves:
+        continue
+    print(f"The computer chooses {computer_move} and you chose {user_input}")
+        
+    if user_input == computer_move:
+        print("Its a tie")
+        total_no_games += 1
+        
+    elif computer_move == "scissors":
+        if user_input == "rock":
+            print("You win")
+            user_wins += 1
+        else:
+            print("You lose")
+        total_no_games += 1
+    
+    elif computer_move == "rock":
+        if user_input == "paper":
+            print("You win")
+            user_wins += 1
+        else:
+            print("You lose")
+        total_no_games += 1
+    
+    elif computer_move == "paper":
+        if user_input == "scissors":
+            print("You win")
+            user_wins += 1
+        else:
+            print("You lose")
+        total_no_games += 1
+            
+
+print("\nThank you for playing!\nGoodbye!")
+print(f"You have won {user_wins} out of {total_no_games} games!")
